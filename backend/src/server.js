@@ -1,5 +1,6 @@
 import express from "express";
 import { ENV } from "./lib/env.js";
+import { connectDb } from "./lib/db.js";
 const app = express()
 
 app.get("/",(req,res)=>{
@@ -7,4 +8,8 @@ app.get("/",(req,res)=>{
 
 })
 
-app.listen( ENV.PORT , ()=> console.log("server is working "))
+app.listen( ENV.PORT , ()=>{ 
+    console.log("server is working ")
+    connectDb()
+
+})
