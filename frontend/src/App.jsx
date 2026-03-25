@@ -1,5 +1,5 @@
 import './App.css'
-import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
+import { Show, SignInButton, SignOutButton, SignUpButton, UserButton } from '@clerk/react'
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         </Show>
         <Show when="signed-in">
           <UserButton />
+          <SignOutButton/>
         </Show>
       </header>
     </>
